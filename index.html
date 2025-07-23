@@ -4,149 +4,210 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Curso Geladinho KV</title>
+
+<!-- Importando fonte Montserrat (igual no original) -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
 <style>
-  /* Reset básico */
-  * {
+  /* Reset e base */
+  *, *::before, *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
   }
 
   body {
-    font-family: 'Arial', sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+    background: #fff;
+    color: #111;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
   }
 
   .container {
-    max-width: 960px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
   }
 
-  h1 {
-    color: #d12f2f;
-    margin-bottom: 15px;
+  header {
+    text-align: center;
+    padding: 30px 0 20px;
   }
 
-  .subtitle {
+  header img {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  main {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  main h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #e01023;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  main p.subtitle {
+    font-weight: 400;
     font-size: 1.2rem;
-    color: #555;
     margin-bottom: 25px;
+    color: #333;
   }
 
+  /* Video responsivo */
   .video-wrapper {
+    position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    margin-bottom: 25px;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    margin-bottom: 30px;
   }
 
-  iframe {
+  .video-wrapper iframe {
+    position: absolute;
     width: 100%;
     height: 100%;
+    left: 0;
+    top: 0;
     border: none;
     border-radius: 6px;
   }
 
-  .content-section {
-    margin-bottom: 30px;
+  /* Conteúdo do texto */
+  section.content {
+    text-align: left;
+    font-size: 1.1rem;
+    color: #222;
+    line-height: 1.6;
+    margin-bottom: 35px;
   }
 
-  .content-section p {
-    margin-bottom: 15px;
+  section.content strong {
+    font-weight: 700;
   }
 
-  ul {
+  section.content ul {
+    margin-top: 15px;
     margin-left: 20px;
-    margin-bottom: 15px;
+    list-style-type: disc;
   }
 
-  ul li {
-    margin-bottom: 8px;
+  section.content ul li {
+    margin-bottom: 10px;
   }
 
+  /* Preço */
   .price {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #d12f2f;
-    margin-bottom: 30px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e01023;
+    margin: 35px 0 30px;
+    text-align: center;
   }
 
+  /* Botão de checkout */
   .btn-checkout {
     display: inline-block;
-    background-color: #d12f2f;
+    background-color: #e01023;
     color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 18px 60px;
+    border-radius: 50px;
+    box-shadow: 0 6px 0 #b20a17;
     transition: background-color 0.3s ease;
   }
 
   .btn-checkout:hover {
-    background-color: #a62424;
+    background-color: #b20a17;
   }
 
+  /* Rodapé */
   footer {
-    margin-top: 40px;
-    font-size: 0.9rem;
-    color: #888;
+    background-color: #f9f9f9;
     text-align: center;
+    padding: 25px 0;
+    font-size: 0.9rem;
+    color: #555;
   }
 
-  /* Responsividade simples */
-  @media (max-width: 600px) {
-    .container {
-      margin: 10px;
-      padding: 15px;
+  /* Responsividade */
+  @media (max-width: 768px) {
+    main h1 {
+      font-size: 2rem;
     }
+
     .price {
-      font-size: 1.5rem;
+      font-size: 2.2rem;
     }
+
+    .btn-checkout {
+      padding: 15px 40px;
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 400px) {
     .btn-checkout {
       width: 100%;
-      text-align: center;
       padding: 15px 0;
+      box-sizing: border-box;
     }
   }
 </style>
+
 </head>
 <body>
 
-<div class="container">
-  <h1>Curso Geladinho KV</h1>
-  <div class="subtitle">Aprenda a fazer geladinhos gourmet e aumente sua renda!</div>
+  <header>
+    <!-- Logo original (copiei o logo do site) -->
+    <img src="https://cursosdeconfeitaria.shop/wp-content/uploads/2022/05/logo-kv-01.png" alt="Logo Curso Geladinho KV" />
+  </header>
 
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/QVGb-hypb4E" title="Vídeo do Curso Geladinho KV" allowfullscreen></iframe>
-  </div>
+  <main class="container">
+    <h1>Aprenda a fazer geladinhos gourmet e aumente sua renda!</h1>
+    <p class="subtitle">Com o Curso Geladinho KV, você vai dominar técnicas exclusivas para vender muito!</p>
 
-  <div class="content-section">
-    <p>Quer aprender a fazer geladinhos deliciosos que vendem muito? Com o <strong>Curso Geladinho KV</strong>, você terá acesso a técnicas exclusivas para transformar ingredientes simples em sobremesas incríveis.</p>
-    
-    <ul>
-      <li>Receitas práticas e fáceis de seguir;</li>
-      <li>Dicas para aumentar suas vendas;</li>
-      <li>Material didático completo;</li>
-      <li>Acesso vitalício ao conteúdo;</li>
-      <li>Bônus especiais para alunos.</li>
-    </ul>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/QVGb-hypb4E" title="Vídeo do Curso Geladinho KV" allowfullscreen></iframe>
+    </div>
 
-    <p><strong>Valor promocional:</strong></p>
+    <section class="content">
+      <p>Quer transformar ingredientes simples em geladinhos deliciosos que encantam os clientes? Com o <strong>Curso Geladinho KV</strong>, você terá acesso a:</p>
+      <ul>
+        <li>Receitas práticas e exclusivas;</li>
+        <li>Dicas para aumentar suas vendas;</li>
+        <li>Material completo e fácil de acompanhar;</li>
+        <li>Acesso vitalício ao curso;</li>
+        <li>Bônus especiais para alunos.</li>
+      </ul>
+    </section>
+
     <div class="price">R$ 37,00</div>
 
-    <a href="https://pay.kirvano.com/e56164d4-ac3e-4ae5-8d4c-c9546f996ce7?aff=0afcff48-4914-4558-8cee-7a5566b0452d" target="_blank" rel="noopener noreferrer" class="btn-checkout">Quero comprar agora</a>
-  </div>
+    <a href="https://pay.kirvano.com/e56164d4-ac3e-4ae5-8d4c-c9546f996ce7?aff=0afcff48-4914-4558-8cee-7a5566b0452d" target="_blank" rel="noopener noreferrer" class="btn-checkout">
+      Quero comprar agora
+    </a>
+  </main>
 
   <footer>
     © 2025 Curso Geladinho KV - Todos os direitos reservados.
   </footer>
-</div>
 
 </body>
 </html>
